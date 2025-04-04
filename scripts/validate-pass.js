@@ -18,6 +18,7 @@ function getCase() {
     let caseScenario = document.getElementById("case-scenario");
     let prevlink = document.getElementById("prevlink");
     let nextlink = document.getElementById("nextlink");
+    let hint = document.getElementById("hint");
 
     if (urlInputValue === '1') {
         
@@ -69,7 +70,7 @@ function getCase() {
 function checkPassword(){
     let urlInputValue = getQueryParam("case");
     let passwordInput = document.getElementById("txtpassword");
-
+    let hint = document.getElementById("hint");
     
     if(urlInputValue === '1'){
         let key01 = localStorage.getItem("key01");
@@ -105,6 +106,7 @@ function checkPassword(){
 
             } else {
                 alert("Incorrect password! Please Try Again.");
+                hint.textContent = "Contains 6 characters"
             }
 
             attempts02= attempts02 + 1;
@@ -125,6 +127,7 @@ function checkPassword(){
 
             } else {
                 alert("Incorrect password! Please Try Again.");
+                hint.textContent = "Contains 8 characters (a-z, A-Z, 0-9)"
             }
 
             attempts03= attempts03 + 1;
